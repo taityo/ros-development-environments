@@ -1,0 +1,13 @@
+version: "3"
+services: 
+    ros-core:
+        image: ros:melodic-ros-core-stretch
+        command: roscore
+        network_mode: "host"
+    ros-base:
+        build: .
+        image: taityo/ros-base
+        environment: 
+            - ROS_MASTER_URI=localhost:11311
+        network_mode: "host"
+        tty: true

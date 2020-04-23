@@ -1,0 +1,15 @@
+version: "3"
+services: 
+    ros-core:
+        image: ros:melodic-ros-core-stretch
+        command: roscore
+        network_mode: "host"
+    ros-desktop-full:
+        build: .
+        image: taityo/ros-desktop-moveit
+        environment: 
+            - ROS_MASTER_URI=localhost:11311
+            - DISPLAY=$DISPLAY
+        network_mode: "host"
+        tty: true
+
