@@ -7,6 +7,8 @@ services:
     ros-desktop-full:
         build: .
         image: taityo/ros-desktop-moveit
+        volumes:
+            - ./:/home/catkin_ws/src/
         environment: 
             - ROS_MASTER_URI=localhost:11311
             - DISPLAY=$DISPLAY

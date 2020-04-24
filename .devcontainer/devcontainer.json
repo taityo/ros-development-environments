@@ -1,0 +1,17 @@
+{
+  "name": "Remote ROS Environment",
+  "dockerComposeFile": [
+    "../docker-compose.yml",
+  ],
+  "service": "ros-desktop-moveit",
+  "workspaceFolder": "/home/catkin_ws/src/ros-practice",
+  "extensions": [
+  ],
+  "settings": {
+    "editor.tabSize": 2,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "shutdownAction": "stopCompose" // or "none"
+}
