@@ -4,7 +4,7 @@ services:
         image: ros:melodic-ros-core-stretch
         command: roscore
         network_mode: "host"
-    ros-base:
+    ros-moveit:
         build: .
         image: taityo/ros-moveit
         volumes:
