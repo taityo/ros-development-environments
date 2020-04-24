@@ -5,11 +5,12 @@ services:
         command: roscore
         network_mode: "host"
         tty: true
-    ros-desktop-moveit:
+    ros-moveit-desktop:
         build: .
-        image: taityo/ros-desktop-moveit
+        image: taityo/ros-moveit-desktop
         volumes:
-            - ./:/home/catkin_ws/src/
+            #- ./:/home/catkin_ws/src/
+            - ./:/home/ws_moveit/src/
             - $HOME/.Xauthority:/root/.Xauthority:rw
         environment: 
             - ROS_MASTER_URI=http://localhost:11311

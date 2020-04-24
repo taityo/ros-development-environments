@@ -4,9 +4,9 @@ services:
         image: ros:melodic-ros-core-stretch
         command: roscore
         network_mode: "host"
-    ros-desktop-moveit:
+    ros-moveit-desktop:
         build: .
-        image: taityo/ros-desktop-moveit
+        image: taityo/ros-moveit-desktop
         volumes: 
             - $HOME/.Xauthority:/root/.Xauthority:rw
         environment: 
@@ -15,4 +15,3 @@ services:
             - DISPLAY=$DISPLAY
         network_mode: "host"
         tty: true
-
