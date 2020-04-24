@@ -7,7 +7,11 @@ services:
     ros-base:
         build: .
         image: taityo/ros-base
+        volumes:
+            - $HOME/.Xauthority:/root/.Xauthority:rw
         environment: 
-            - ROS_MASTER_URI=localhost:11311
+            - ROS_MASTER_URI=http://localhost:11311
+            - ROS_IP=192.168.189.76
+            - DISPLAY=$DISPLAY
         network_mode: "host"
         tty: true

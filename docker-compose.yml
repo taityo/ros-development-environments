@@ -4,14 +4,16 @@ services:
         image: ros:melodic-ros-core-stretch
         command: roscore
         network_mode: "host"
-    ros-desktop-full:
+        tty: true
+    ros-desktop-moveit:
         build: .
         image: taityo/ros-desktop-moveit
         volumes:
             - ./:/home/catkin_ws/src/
+            - $HOME/.Xauthority:/root/.Xauthority:rw
         environment: 
-            - ROS_MASTER_URI=localhost:11311
+            - ROS_MASTER_URI=http://localhost:11311
+            - ROS_IP=192.168.189.76
             - DISPLAY=$DISPLAY
         network_mode: "host"
         tty: true
-
