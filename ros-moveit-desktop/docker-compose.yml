@@ -13,5 +13,7 @@ services:
             - ROS_MASTER_URI=http://localhost:11311
             - ROS_IP=192.168.189.76
             - DISPLAY=$DISPLAY
+#            - WORKDIR=/home/ws_moveit
+#        working_dir: /home/ws_moveit
         network_mode: "host"
         tty: true

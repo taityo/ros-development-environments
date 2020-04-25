@@ -9,12 +9,14 @@ services:
         build: .
         image: taityo/ros-moveit-desktop
         volumes:
-            #- ./:/home/catkin_ws/src/
+#            - ./:/home/catkin_ws/src/
             - ./:/home/ws_moveit/src/
             - $HOME/.Xauthority:/root/.Xauthority:rw
         environment: 
             - ROS_MASTER_URI=http://localhost:11311
             - ROS_IP=192.168.189.76
             - DISPLAY=$DISPLAY
+            - WORKDIR=/home/ws_moveit
+        working_dir: /home/ws_moveit/src
         network_mode: "host"
         tty: true
