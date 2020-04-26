@@ -9,7 +9,6 @@ services:
         build: .
         image: taityo/ros-moveit-desktop
         volumes:
-#            - ./catkin_src/:/home/catkin_ws/src/
             - ./moveit_src:/home/ws_moveit/src/
             - $HOME/.Xauthority:/root/.Xauthority:rw
         environment: 

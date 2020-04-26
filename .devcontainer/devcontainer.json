@@ -1,11 +1,13 @@
 {
   "name": "Remote ROS Environment",
   "dockerComposeFile": [
-    "../docker-compose.yml",
+    "./docker-compose.catkin.yml",
+//    "./docker-compose.moveit.yml",
   ],
   "service": "ros-desktop-moveit",
-  "workspaceFolder": "/home/catkin_ws/src/ros-practice",
+  "workspaceFolder": "/home/catkin_ws/src/",
   "extensions": [
+    "ms-python.python"
   ],
   "settings": {
     "editor.tabSize": 2,
