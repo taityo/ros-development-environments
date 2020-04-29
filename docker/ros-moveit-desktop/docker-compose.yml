@@ -9,10 +9,13 @@ services:
         image: taityo/ros-moveit-desktop
         volumes: 
             - $HOME/.Xauthority:/root/.Xauthority:rw
+        user: 1000:1000 # uid:gid
         environment: 
             - ROS_MASTER_URI=http://localhost:11311
             - ROS_IP=192.168.189.76
             - DISPLAY=$DISPLAY
+            - USER=taicho
+            - PASSWORD=Mikocchan1
 #            - WORKDIR=/home/ws_moveit
 #        working_dir: /home/ws_moveit
         network_mode: "host"
