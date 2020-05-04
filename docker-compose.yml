@@ -11,7 +11,7 @@ services:
         volumes:
             - ./catkin_src/:/home/catkin_ws/src/:rw
 #            - ./moveit_src:/home/ws_moveit/src/:rw
-            - $HOME/.Xauthority:/root/.Xauthority:rw
+            - $HOME/.Xauthority:/home/taicho/.Xauthority:rw
         user: 1000:1000 # uid:gid
         environment: 
             - ROS_MASTER_URI=http://localhost:11311

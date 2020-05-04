@@ -1,7 +1,9 @@
 FROM taityo/ros-moveit
 
 RUN apt-get update && \
-    apt-get install -y ros-melodic-desktop-full
+    apt-get install -y \
+        ros-melodic-desktop-full \
+        ros-melodic-joint-state-publisher-gui
 
 ENV DEFAULT_USER=docker \
     DEFAULT_PASSWD=docker
