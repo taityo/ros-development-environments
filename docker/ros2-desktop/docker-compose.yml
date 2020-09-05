@@ -6,7 +6,7 @@ services:
         image: osrf/ros2:devel
         environment: 
             - ROS_DOMAIN_ID=1
-            - DISPLAY=vncserver:1.0
+            - DISPLAY=novnc:0.0
 #        network_mode: "host"
 #        volumes: 
 #            - .:/opt/ros2_ws/src/ros2
@@ -14,24 +14,8 @@ services:
             - novnc
         tty: true
     novnc:
-        image: dougw/novnc
+        image: gramaziokohler/novnc
+#        image: ct2034/vnc-ros-kinetic-full
         ports: 
-            - 6080:8081
-        environment: 
-            - REMOTE_HOST=vncserver
-            - REMOTE_PORT=5901
-        depends_on:
-            - vncserver
-    vncserver:
-        image: taityo/ubuntu-desktop
-#        image: dcsunset/ubuntu-vnc:18.04
-#        image: accetto/ubuntu-vnc-xfce
-#        image: chenjr0719/ubuntu-unity-novnc
-        ports: 
-            - 5901:5901
-            - 6000:6000
-#            - 6080:6080
-        environment: 
-            - USER=ubuntu
-            - PASSWORD=iot
-#            - VNC_PASSWD=iot
+#            - 6080:80
+            - 6080:8080
