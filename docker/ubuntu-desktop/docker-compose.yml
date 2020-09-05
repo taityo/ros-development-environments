@@ -1,0 +1,12 @@
+version: "3"
+services: 
+    ubuntu-desktop:
+        build: .
+        image: taityo/ros2-desktop
+        environment: 
+            - USER=ubuntu
+            - PASSWORD=iot
+        ports: 
+            - 6080:6080
+            - 5901:5901
+            - 6000:6000
